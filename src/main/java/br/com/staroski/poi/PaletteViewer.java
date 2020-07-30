@@ -2,6 +2,7 @@ package br.com.staroski.poi;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.SystemColor;
 import java.lang.reflect.Field;
@@ -150,6 +151,7 @@ public final class PaletteViewer extends JFrame {
             String hexa = String.format("%06X", rgb);
             JLabel label = new JLabel(hexa, SwingConstants.CENTER);
             label.setForeground(rgb < 0x808080 ? Color.WHITE : Color.BLACK);
+            label.setFont(label.getFont().deriveFont(Font.BOLD).deriveFont(16.0F));
             StringBuilder names = new StringBuilder("<html><p align='center'>");
             int count = 0;
             for (String name : findNames(color)) {
